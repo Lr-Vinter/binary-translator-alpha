@@ -30,11 +30,10 @@ class Jit_commands
         char je_c   = 0x74;
         char ja_c   = 0x77;
         
-        char call_pref = 0x66;
         char call_inf  = 0xE8;
         
-        char call_pref = 0x66;
-        char call_inf  = 0xE8;
+        char call_abs_pref = 0x66;
+        char call_abs_inf  = 0xE8;
         
         char ret_c     = 0xC3;
         

@@ -217,7 +217,7 @@ int x_86_Execute::make_x86com(int num)
 
 const int JMPF_SHIFT  = 16;
 const int USUAL_JMP   =  12;
-const int CALLF_SHIFT =  2;
+const int CALLF_SHIFT =  3;
 
 const int IS_JMP_TYPE =  3;
 const int IS_JMP      = 10;
@@ -328,8 +328,6 @@ int x_86_Execute::Execute()
 }
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------
-int 
-
 
 int x_86_Execute::Ex_In()
 {

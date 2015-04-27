@@ -1,4 +1,12 @@
 start_frame 0
+get -2
+call factorial
+popar bx
+end_frame
+ret
+
+:factorial
+start_frame 0
 
 get -2
 popar bx
@@ -6,7 +14,7 @@ popar bx
 push 1
 popar ax
 
-:loop
+:factorial_loop
 
 pushar ax
 pushar bx
@@ -20,12 +28,89 @@ popar bx
 
 pushar bx
 push 1
-jb loop
+jb factorial_loop
+
+end_frame
+ret
+
+:fibonacci
+start_frame 0
+
+push 1
+get -2
+sub
+popar dx
+
+push 1
+popar ax
+
+push 1
+popar bx
+
+:loop
+pushar dx
+push 1
+ja break
+
+push 1
+pushar dx
+sub
+popar dx
+
+pushar ax
+pushar bx
+add
+pushar ax
+popar bx
+popar ax
+
+jmp loop
+
+:break
+
+end_frame
+ret
+
+FIBBONACI WITH PARAMETER FROM C:
+
+start_frame 0
+
+push 1
+get -2
+sub
+popar dx
+
+push 1
+popar ax
+
+push 1
+popar bx
+
+:loop
+pushar dx
+push 1
+ja break
+
+push 1
+pushar dx
+sub
+popar dx
+
+pushar ax
+pushar bx
+add
+pushar ax
+popar bx
+popar ax
+
+jmp loop
+
+:break
 
 end_frame
 
 ret
-exit_asm   
+exit_asm
 
 
 FACTORIAL WITH PARAMETER FROM C:

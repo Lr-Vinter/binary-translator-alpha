@@ -120,10 +120,10 @@ int Jit_platform::emit_setl_al()
 
 int Jit_platform::emit_Call(int num)
 {
-    command[byte_size++] = CMD.call_pref;
+    //command[byte_size++] = CMD.call_pref;
     command[byte_size++] = CMD.call_inf ;
-    command[byte_size++] = num & 0xFF;
-    command[byte_size++] = (num >> 8) & 0xFF;
+    *(int*)(command + byte_size) = num;
+    byte_size += 4;
     
     return 1;
 }
