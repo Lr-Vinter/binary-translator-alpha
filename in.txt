@@ -1,0 +1,60 @@
+start_frame 0
+
+get -2
+popar bx
+
+push 1
+popar ax
+
+:loop
+
+pushar ax
+pushar bx
+mul
+popar ax
+
+push 1
+pushar bx
+sub
+popar bx
+
+pushar bx
+push 1
+jb loop
+
+end_frame
+
+ret
+exit_asm   
+
+
+FACTORIAL WITH PARAMETER FROM C:
+
+start_frame 0
+
+get -2
+popar bx
+
+push 1
+popar ax
+
+:loop
+
+pushar ax
+pushar bx
+mul
+popar ax
+
+push 1
+pushar bx
+sub
+popar bx
+
+pushar bx
+push 1
+jb loop
+
+end_frame
+
+ret
+exit_asm   
